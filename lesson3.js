@@ -66,3 +66,4 @@ console.log('Order total: ' + overalAllTotal);
 
 
 console.log();
+console.log();
