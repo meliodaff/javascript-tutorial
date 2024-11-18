@@ -56,6 +56,16 @@ function taxation(sum){
     return overAllTotal;
     
 }
-
-
 console.log(taxation(sum));
+
+function toFahrenheit(celcius){
+    let fahrenheit = (celcius * 9 / 5) + 32;
+    return fahrenheit;
+}
+function toCelcius(fahrenheit){
+    let celcius = (fahrenheit - 32) * 5 / 9;
+    return celcius;
+}
+
+console.log(toFahrenheit(25));
+console.log(toCelcius(86));
