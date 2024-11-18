@@ -63,7 +63,3 @@ console.log('Shipping & handling: ' + shippingFeeFloated);
 console.log('Total before tax: ' + totalWithSFFloated);
 console.log('Estimated tax(10%): ' + totalWithTaxFloated);
 console.log('Order total: ' + overalAllTotal);
-
-
-console.log();
-console.log();
