@@ -130,4 +130,16 @@ function zero(){
   numbers(0);
   show();
 }
-hi
+function addition(){
+  calculation += ' + ';
+  show();
+}
+function equal(){
+  calculation = eval(calculation);
+  console.log(calculation);
+}
+function reset(){
+  calculation = '';
+  console.log('Reset');
+}
+
