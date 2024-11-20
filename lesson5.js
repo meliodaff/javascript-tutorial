@@ -130,4 +130,9 @@ function zero(){
   numbers(0);
   show();
 }
+<<<<<<< HEAD
 hi
+=======
+
+dsadsa
+>>>>>>> f785eba9d77bc07694adaa49e32ce0b3ba19e9cb
