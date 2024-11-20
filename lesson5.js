@@ -1,3 +1,4 @@
+/*
 let qty = 0;
 
 function updateQty(){
@@ -59,7 +60,6 @@ function resetCart(){
   updateQty()
 }
 
-/*
 let name = 'Jv Bialen';
 console.log(`My name is ${name}`);
 
@@ -80,3 +80,53 @@ let tax = cost * .1;
 console.log(`Cost of food: $${cost}`);
 console.log(`Total cost of food with tax: $${cost + tax}`);
 */
+
+
+let calculation = '';
+
+function show(){
+  console.log(calculation);
+}
+function numbers(n){
+  calculation = calculation + n;
+}
+function one(){
+  numbers(1);
+  show();
+}
+function two(){
+  numbers(2);
+  show();
+}
+function three(){
+  numbers(3);
+  show();
+}
+function four(){
+  numbers(4);
+  show();
+}
+function five(){
+  numbers(5);
+  show();
+}
+function six(){
+  numbers(6);
+  show();
+}
+function seven(){
+  numbers(7);
+  show();  
+}
+function eight(){
+  numbers(8);
+  show();
+}
+function nine(){
+  numbers(9);
+  show();
+}
+function zero(){
+  numbers(0);
+  show();
+}
