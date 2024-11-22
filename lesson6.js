@@ -43,7 +43,8 @@ function result(yourPick, computerPick){
     if (yourPick === computerPick){
         console.log('Draw');
     }
-    else if((yourPick === 'Rock' && computerPick === 'Scissor') ||
+    else if(
+        (yourPick === 'Rock' && computerPick === 'Scissor') ||
         (yourPick === 'Paper' && computerPick === 'Rock') ||
         (yourPick === 'Scissor' && computerPick === 'Paper')
     ){
@@ -53,3 +54,21 @@ function result(yourPick, computerPick){
         console.log('You lose');
     }
 }
+
+let cartQuantity;
+/*
+if (cartQuantity) {
+    console.log('Cart has products');
+}
+else{
+    console.log('Cart has no product');
+}
+*/
+
+let ds = (95 >= 91) ? 'Passed' : 'Failed';
+
+cartQuantity && console.log('Cart has products');
+!cartQuantity && console.log('Cart has no products');
+
+cartQuantity = 'hello';
+console.log(!cartQuantity);
