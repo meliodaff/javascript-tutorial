@@ -1,37 +1,37 @@
 function rock(){
-    display('rock');
     let yourPick = 'Rock'
-    let computerPicked = computerPick(Math.random());
-    result(yourPick, computerPicked);
+    display(yourPick);
+    let computerChoice = computerPick(Math.random());
+    result(yourPick, computerChoice);
 }
 
 function paper(){
-    display('paper');
     let yourPick = 'Paper'
-    let computerPicked = computerPick(Math.random());
-    result(yourPick, computerPicked);
+    display(yourPick);
+    let computerChoice = computerPick(Math.random());
+    result(yourPick, computerChoice);
 }
 
 function scissor(){
-    display('scissor');
     let yourPick = 'Scissor'
-    let computerPicked = computerPick(Math.random());
-    result(yourPick, computerPicked);
+    display(yourPick);
+    let computerChoice = computerPick(Math.random());
+    result(yourPick, computerChoice);
 }
 
 function computerPick(randomNumber){
-    let result = '';
+    let computerChoice = '';
     if(randomNumber <= .333){
         console.log('Computer: Rock');
-        return result = 'Rock';
+        return computerChoice = 'Rock';
     }
     else if (randomNumber <= .667){
         console.log('Computer: Paper');
-        return result = 'Paper';
+        return computerChoice = 'Paper';
     }
     else {
         console.log('Computer: scissor');
-        return result = 'Scissor';
+        return computerChoice = 'Scissor';
     }
 }
 
