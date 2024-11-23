@@ -1,56 +1,71 @@
-/*
 let qty = 0;
+let limit = 10;
+
+function displayQty(){
+  console.log(`Cart quantity: ${qty}`);
+}
+
+function showAlert(){
+  alert('The cart is full');
+}
 
 function updateQty(){
   document.getElementById('qty').innerHTML = 'Quantity: ' + qty;
 }
 
 function showQty(){
-  console.log(`Cart quantity: ${qty}`);
+  displayQty()
   updateQty()
 }
 function plusOne(){
-  qty++;
-  console.log(`Cart quantity: ${qty}`);
+  qty >= limit ? showAlert() : false;
+  checks10() && qty++;
+  displayQty()
   updateQty()
 }
 
 function plusTwo(){
-  qty += 2;
-  console.log(`Cart quantity: ${qty}`);
+  qty >= limit || qty >= limit - 1 ? showAlert() : false ;
+  qty += checks9() ? 2 : 0
+  displayQty()
   updateQty()
 }
 
 function plusThree(){
-  qty += 3;
-  console.log(`Cart quantity: ${qty}`);
+  qty >= limit || qty >= limit - 2 ? showAlert() : false ;
+  qty += checks8() ? 3 : 0
+  displayQty()
   updateQty()
 }
 
 function plusFour(){
   qty += 4;
-  console.log(`Cart quantity: ${qty}`);
+  displayQty()
   updateQty()
 }
 
 function plusFive(){
   qty += 5;
-  console.log(`Cart quantity: ${qty}`);
+  displayQty()
   updateQty()
 }
 
 function minusOne(){
-  qty--;
+  qty === 0 ? alert('Cart has no products') : false;
+  checks0() && qty--;
+  displayQty()
   updateQty()
 }
 
 function minusTwo(){
   qty -= 2;
+  displayQty()
   updateQty()
 }
 
 function minusThree(){
   qty -= 3;
+  displayQty()
   updateQty()
 }
 
@@ -60,6 +75,27 @@ function resetCart(){
   updateQty()
 }
 
+function checks10(){
+  let maximum = qty === 10 ? false : true;
+  return maximum;
+}
+
+function checks9(){
+  let maximum = qty === 9 || qty === 10 ? false : true;
+  return maximum;
+}
+
+function checks8(){
+  let maximum = qty === 8 || qty === 10 ? false : true;
+  return maximum;
+}
+
+function checks0(){
+  let minimum = qty === 0 ? false : true;
+  return minimum;
+}
+
+/*
 let name = 'Jv Bialen';
 console.log(`My name is ${name}`);
 
@@ -79,7 +115,6 @@ let cost = coffeeTotal + bagelTotal + soupTotal;
 let tax = cost * .1;
 console.log(`Cost of food: $${cost}`);
 console.log(`Total cost of food with tax: $${cost + tax}`);
-*/
 
 
 let calculation = '';
@@ -143,3 +178,4 @@ function reset(){
   console.log('Reset');
 }
 
+*/
