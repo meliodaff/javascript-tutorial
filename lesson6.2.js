@@ -35,11 +35,11 @@ function checksIfHoliday(isHoliday){
 } */
 
 
-    let randomNumber = Math.random();
-    let result = randomNumber > .5 ? 'Heads' : 'Tails';
-    let myGuess = 'Tails';
+let randomNumber = Math.random();
+let result = randomNumber > .5 ? 'Heads' : 'Tails';
+let myGuess = 'Tails';
 
-    console.log(`Your guess: ${myGuess}`);
+console.log(`Your guess: ${myGuess}`);
     console.log(`Coin flipped: ${result}`);
 
     let resultOfTheGame = result === myGuess ? 'You win' : 'You lose';
