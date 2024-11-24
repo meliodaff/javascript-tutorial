@@ -51,20 +51,22 @@ function plusFive(){
 }
 
 function minusOne(){
-  qty === 0 ? alert('Cart has no products') : false;
+  qty === 0 ? cartHasNoProducts() : null;
   checks0() && qty--;
   displayQty()
   updateQty()
 }
 
 function minusTwo(){
-  qty -= 2;
+  qty <= 1 ? cartHasNoProducts() : null;
+  qty += checks1() ? -2 : 0
   displayQty()
   updateQty()
 }
 
 function minusThree(){
-  qty -= 3;
+  qty <= 2 ? cartHasNoProducts() : null;
+  qty += checks2() ? -3 : 0
   displayQty()
   updateQty()
 }
@@ -93,6 +95,18 @@ function checks8(){
 function checks0(){
   let minimum = qty === 0 ? false : true;
   return minimum;
+}
+function checks1(){
+  let minimum = qty <= 1 ? false : true;
+  return minimum;
+}
+function checks2(){
+  let minimum = qty <= 2 ? false : true;
+  return minimum;
+}
+
+function cartHasNoProducts(){
+alert('Cart has no products'); 
 }
 
 /*
