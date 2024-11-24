@@ -47,4 +47,24 @@ function convertLength(length, from, to) {
   }
 }
 
-console.log(convertLength(5, 'km', 'lbs'));
+const person = {firstName: 'Jay', 
+              lastName: 'Bialen', 
+              age: '20',
+              fullName: function(){
+                return this.firstName + ' ' + this.lastName.toUpperCase();
+              }
+            };
+const person1 = {firstName: 'Nea', 
+              lastName: 'De Veyra', 
+              age: '19',
+              fullName: function(){
+                return this.firstName + ' ' + person.lastName;
+              }
+            };
+const person2 = {firstName: 'Nea', 
+              lastName: 'De Veyra', 
+              age: '19',
+             };
+            
+let myArray = Object.values(person);
+console.log(myArray[0]);
