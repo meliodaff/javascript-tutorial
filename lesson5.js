@@ -88,7 +88,7 @@ function checks9(){
 }
 
 function checks8(){
-  let maximum = qty === 8 || qty === 10 ? false : true;
+  let maximum = qty >= 8 ? false : true;
   return maximum;
 }
 
