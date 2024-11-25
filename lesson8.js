@@ -40,11 +40,9 @@ function display(yourPick){
 }
 
 function result(yourPick, computerPick){
-  let score = '';
   if (yourPick === computerPick){
       console.log('Draw');
-      score = 'draw';
-      scoring(score);
+      scoring('draw');
   }
   else if(
       (yourPick === 'Rock' && computerPick === 'Scissor') ||
@@ -52,13 +50,11 @@ function result(yourPick, computerPick){
       (yourPick === 'Scissor' && computerPick === 'Paper')
   ){
       console.log('You win');
-      score = 'win';
-      scoring(score);
+      scoring('win');
   }
   else {
       console.log('You lose');
-      score = 'lose';
-      scoring(score);
+      scoring('lose');
   }
 }
 
@@ -67,6 +63,7 @@ let score = {
   losses: 0,
   draws: 0
 };
+
 function scoring(result){
   if(result === 'win'){
     score.wins += 1;
@@ -76,11 +73,16 @@ function scoring(result){
   else if (result === 'lose'){
     score.losses += 1;
     console.log(score);
-
   }
   else {
     score.draws += 1;
     console.log(score);
-
   }
+}
+
+function resetScore(){
+  score.wins = 0;
+  score.losses = 0;
+  score.draws = 0;
+  console.log('Score was back to zero');
 }
