@@ -65,6 +65,18 @@ const person2 = {firstName: 'Nea',
               lastName: 'De Veyra', 
               age: '19',
              };
-            
-let myArray = Object.values(person);
-console.log(myArray[0]);
+
+
+
+let myObject = {
+  product: {
+    name: 'Socks',
+    price: 1090
+  }
+}
+let alterEgo = person;
+person.hobby = 'coding'; // both of these share the same memory address
+alterEgo.hobby = 'learning'
+console.log(person);
+delete alterEgo.hobby;
+console.log(alterEgo.fullName());
