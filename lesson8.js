@@ -1,3 +1,4 @@
+/*
 function rock(){
   let yourPick = 'Rock'
   display(yourPick);
@@ -86,3 +87,40 @@ function resetScore(){
   score.draws = 0;
   console.log('Score was back to zero');
 }
+*/
+
+
+
+
+const product = {
+  name: 'Basketball',
+  price: 2095,
+  ['delivery-time']: '3 days'
+}
+
+const product1 = {
+  name: 'Shirt',
+  price: 1000,
+  ['delivery-time']: '2 days'
+};
+const product2 = {
+  name: 'Shirt',
+  price: 1000,
+  ['delivery-time']: '2 days'
+};
+
+function comparePrice(product1, product2){
+  return product1.price > product2.price ? product2 : product1;
+}
+
+console.log(comparePrice(product1, product));
+
+function isSameProduct(product1, product2){
+  return product1.name === product2.name && product1.price && product2.price ? true : false;
+}
+
+
+console.log(isSameProduct(product1, product2));
+
+console.log('Good Morning'.toLowerCase());
+console.log('test '.repeat(2));
