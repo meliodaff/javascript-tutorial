@@ -79,4 +79,4 @@ person.hobby = 'coding'; // both of these share the same memory address
 alterEgo.hobby = 'learning'
 console.log(person);
 delete alterEgo.hobby;
-console.log(alterEgo.fullName());
+console.log(person1.fullName());
