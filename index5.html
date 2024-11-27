@@ -22,40 +22,43 @@
   <button onclick="resetCart()">Reset Cart</button>
   <p id="qty">Quantity: 0</p>
 -->
+<p class="total">0</p>
+
 <div>
   <button onclick="">A</button>
   <button onclick="">C</button>
   <button onclick="">%</button>
-  <button class="calculate" onclick="">÷</button>
+  <button class="calculate" onclick="division()">÷</button>
 </div>
-  <div>
-    <button onclick="one()">1</button>
-    <button onclick="two()">2</button>
-    <button onclick="three()">3</button>
-    <button class="calculate" onclick="three()">x</button>
-  </div>
+<div>
+  <button onclick="seven()">7</button>
+  <button onclick="eight()">8</button>
+  <button onclick="nine()">9</button>
+  <button class="calculate" onclick="addition()">+</button>
+  
   <div>
     <button onclick="four()">4</button>
     <button onclick="five()">5</button>
     <button onclick="six()">6</button>
     <button class="calculate" onclick="subtraction()">-</button>
+    
+  </div>
 
-  </div>
   <div>
-    <button onclick="seven()">7</button>
-    <button onclick="eight()">8</button>
-    <button onclick="nine()">9</button>
-    <button class="calculate" onclick="addition()">+</button>
-
+    <button onclick="one()">1</button>
+    <button onclick="two()">2</button>
+    <button onclick="three()">3</button>
+    <button class="calculate" onclick="multiplication()">x</button>
   </div>
+</div>
+<div>
+  <button onclick="zero()">U</button>
+  <button onclick="zero()">0</button>
+  <button class="dot" onclick="zero()">.</button>
+  <button class="calculate" onclick="equal()">=</button>
+</div>
   <div>
-    <button onclick="zero()">U</button>
-    <button onclick="zero()">0</button>
-    <button onclick="zero()">.</button>
-    <button class="calculate" onclick="equal()">=</button>
-  </div>
-  <div>
-    <button id="reset" onclick="reset()">Reset</button>
+    <button id="reset"onclick="reset()">Reset</button>
   </div>
 
 </body>
