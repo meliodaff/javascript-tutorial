@@ -140,7 +140,7 @@ console.log(`Previous result: ${localStorage.getItem('previousResult')}`);
 
 
 function show(){
-  console.log(calculation);
+  document.querySelector('.total').innerHTML = calculation;
 }
 function numbers(n){
   calculation = calculation + n;
@@ -189,6 +189,18 @@ function addition(){
   calculation += ' + ';
   show();
 }
+function subtraction(){
+  calculation += ' - ';
+  show();
+}
+function multiplication(){
+  calculation += ' * ';
+  show();
+}
+function division(){
+  calculation += ' / ';
+  show();
+}
 function equal(){
   calculation = eval(calculation);
   console.log(calculation);
@@ -196,10 +208,11 @@ function equal(){
   storage = localStorage.getItem('previousResult');
   console.log(`Previous result: ${storage}`);
   console.log(calculation = storage);
+  document.querySelector('.total').textContent = storage;
 }
 function reset(){
   calculation = '';
-  console.log('Reset');
+  show();
   localStorage.setItem('previousResult', 0);
 }
 
