@@ -1,3 +1,4 @@
+/*
 let qty = 0;
 let limit = 10;
 
@@ -109,7 +110,7 @@ function cartHasNoProducts(){
 alert('Cart has no products'); 
 }
 
-/*
+
 let name = 'Jv Bialen';
 console.log(`My name is ${name}`);
 
@@ -129,9 +130,14 @@ let cost = coffeeTotal + bagelTotal + soupTotal;
 let tax = cost * .1;
 console.log(`Cost of food: $${cost}`);
 console.log(`Total cost of food with tax: $${cost + tax}`);
+*/
 
 
 let calculation = '';
+let storage = localStorage.getItem('previousResult');
+console.log(`Previous result: ${localStorage.getItem('previousResult')}`);
+(storage === '' || storage == '0') ? false : console.log(calculation = storage);
+
 
 function show(){
   console.log(calculation);
@@ -186,10 +192,15 @@ function addition(){
 function equal(){
   calculation = eval(calculation);
   console.log(calculation);
+  localStorage.setItem('previousResult', calculation);
+  storage = localStorage.getItem('previousResult');
+  console.log(`Previous result: ${storage}`);
+  console.log(calculation = storage);
 }
 function reset(){
   calculation = '';
   console.log('Reset');
+  localStorage.setItem('previousResult', 0);
 }
 
-*/
+
