@@ -201,6 +201,10 @@ function division(){
   calculation += ' / ';
   show();
 }
+function modulo(){
+  calculation += ' % ';
+  show();
+}
 function equal(){
   calculation = eval(calculation);
   console.log(calculation);
