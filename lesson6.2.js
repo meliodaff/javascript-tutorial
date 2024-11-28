@@ -34,11 +34,11 @@ function checksIfHoliday(isHoliday){
     return result;
 } */
 
-
-
-
 let tossedCoin = '';
-let score = displayResult();
+let score = {
+    wins: 0,
+    losses: 0
+};
 
 function playGame(guess){   
     let randomNumber = Math.random();
@@ -46,48 +46,55 @@ function playGame(guess){
 
     if(tossedCoin === guess){
         score.wins += 1;
-        return true;
     }
     else{
         score.losses += 1;
-        return false;
     }
-
+    localStorage.setItem('score', JSON.stringify(score));
 }
 
+function tails(){
+    console.log('Your guess: Tails');
+    playGame('Tails');
+    console.log(`Coin: ${tossedCoin}`);
+    console.log(score);
+}
+
+function heads(){
+    console.log('Your guess: Heads');
+    playGame('Heads');
+    console.log(`Coin: ${tossedCoin}`);
+    console.log(score);
+};
+
+score = JSON.parse(localStorage.getItem('score'));
+
+function reset(){
+    score = {
+        wins: 0,
+        losses: 0
+    };
+    console.log(score);
+};
+localStorage.getItem('score');
+
+
+
+
+
+
+
+
+
+
+/*
 function showResult(result){
     let finalResult = result == true ? 'You win' : 'You lose';
     console.log(finalResult);
     localStorage.setItem('score', JSON.stringify(score));//always remember that this method only accepts strings so we have to stringify an object.
 }
+*/
 
-function tails(){
-    console.log('Your guess: Tails');
-    let result = playGame('Tails');
-    console.log(`Coin: ${tossedCoin}`);
-    showResult(result);
-    console.log(displayResult());
-}
-function heads(){
-    console.log('Your guess: Heads');
-    let result = playGame('Heads');
-    console.log(`Coin: ${tossedCoin}`);
-    showResult(result);
-    console.log(displayResult());
-};
 
-function reset(){
-    localStorage.removeItem('score'); 
-};
 
-function displayResult(){
-    return JSON.parse(localStorage.getItem('score')); 
-}
-console.log(displayResult());
 
-if(score === null){
-    score = {
-        wins: 0,
-        losses: 0
-    }
-}
