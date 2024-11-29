@@ -1,23 +1,36 @@
-/*
+let yp = document.getElementsByClassName('yourPick')[0];
+let cp = document.getElementsByClassName('computerPick')[0];
+let rs = document.getElementsByClassName('result')[0];
+let scr = document.getElementsByClassName('score')[0];
+
+function displayHTML(yourPick, computerChoice, result1){
+  yp.innerHTML = `Your pick is: ${yourPick}`;
+  cp.innerHTML = `Computer: ${computerChoice}`
+  rs.innerHTML = `Result: ${result1}`;
+}
+
 function rock(){
   let yourPick = 'Rock'
   display(yourPick);
   let computerChoice = computerPick(Math.random());
-  result(yourPick, computerChoice);
+  let result1 = result(yourPick, computerChoice);
+  displayHTML(yourPick, computerChoice, result1);
 }
 
 function paper(){
   let yourPick = 'Paper'
   display(yourPick);
   let computerChoice = computerPick(Math.random());
-  result(yourPick, computerChoice);
+  let result1 = result(yourPick, computerChoice);
+  displayHTML(yourPick, computerChoice, result1);
 }
 
 function scissor(){
   let yourPick = 'Scissor'
   display(yourPick);
   let computerChoice = computerPick(Math.random());
-  result(yourPick, computerChoice);
+  let result1 = result(yourPick, computerChoice);
+  displayHTML(yourPick, computerChoice, result1);
 }
 
 function computerPick(randomNumber){
@@ -42,20 +55,20 @@ function display(yourPick){
 
 function result(yourPick, computerPick){
   if (yourPick === computerPick){
-      console.log('Draw');
-      scoring('draw');
+      scr.innerHTML = 'Score: ' + JSON.stringify(scoring('draw'));
+      return 'Draw';
   }
   else if(
       (yourPick === 'Rock' && computerPick === 'Scissor') ||
       (yourPick === 'Paper' && computerPick === 'Rock') ||
       (yourPick === 'Scissor' && computerPick === 'Paper')
   ){
-      console.log('You win');
-      scoring('win');
+      scr.innerHTML = 'Score: ' + JSON.stringify(scoring('win'));
+      return 'You win';
   }
   else {
-      console.log('You lose');
-      scoring('lose');
+      scr.innerHTML = 'Score: ' + JSON.stringify(scoring('lose'));
+      return 'You lose';
   }
 }
 
@@ -68,30 +81,30 @@ let score = {
 function scoring(result){
   if(result === 'win'){
     score.wins += 1;
-    console.log(score);
-
+    localStorage.setItem('scoreStorage', JSON.stringify(score)); 
+    return score;
   }
   else if (result === 'lose'){
     score.losses += 1;
-    console.log(score);
+    localStorage.setItem('scoreStorage', JSON.stringify(score)); 
+    return score;
   }
   else {
     score.draws += 1;
-    console.log(score);
+    localStorage.setItem('scoreStorage', JSON.stringify(score)); 
+    return score;
   }
 }
+score = JSON.parse(localStorage.getItem('scoreStorage'));
 
 function resetScore(){
   score.wins = 0;
   score.losses = 0;
   score.draws = 0;
-  console.log('Score was back to zero');
+  scr.innerHTML = 'Score: back to zero';
 }
-*/
 
-
-
-
+/*
 const product = {
   name: 'Basketball',
   price: 2095,
@@ -124,3 +137,14 @@ console.log(isSameProduct(product1, product2));
 
 console.log('Good Morning'.toLowerCase());
 console.log('test '.repeat(2));
+
+let person = {
+  firstName: 'Jay',
+  lastName: 'Bialen',
+  age: 20,
+  fullName: function(){
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+*/
+
