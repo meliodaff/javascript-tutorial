@@ -1,8 +1,7 @@
-/*
 function subscribe(){
     let btnSubscribe = document.getElementsByClassName('btn')[0];
     
-    btnSubscribe.innerHTML = btnSubscribe.innerHTML === 'Subscribe' ? 'Subscribed' : 'Subscribe'
+    btnSubscribe.innerHTML = btnSubscribe.innerText === 'Subscribe' ? 'Subscribed' : 'Subscribe'
 }
 
 function calculate(){
@@ -13,7 +12,7 @@ function calculate(){
         alert('No inputted value');
         return;
     }
-    else if (userInput == '0'){
+    else if (userInput < 1){
         alert('watdafuck')
         return;
     }
@@ -25,6 +24,10 @@ function calculate(){
     }
 
     document.getElementsByClassName('total')[0].innerHTML = `Total: $${total}`;
+    
 }
-    */
 
+
+name = 'fa';
+var name;
+console.log(name);
