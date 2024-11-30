@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>Document</title>
-    
 </head>
 <body>
+<!--
+    <h1 onmouseenter="hover()" onmouseleave="leave()">Youtube Subscribe Button</h1>
 
-    <p>Youtube Subscribe Button</p>
     <button class="btn btn-danger" style="margin-left: 35px;" onclick="subscribe()">
         <a href="https://www.youtube.com/channel/UCDr3QFJP4pnKSMeL2WEt5Ew" target="_blank" style="text-decoration: none; color: white;">Subscribe</a>
     </button>
@@ -24,12 +24,24 @@
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 Shipping fee.</p>
     <p>Orders over $40 = FREE Shipping fee.</p>
-    <input type="number" class="userInput" placeholder="Cost of order"> 
+    <input type="text" class="userInput" placeholder="Cost of order" onkeydown="typing(event)">
     <button class="btn btn-primary" onclick="calculate()">Calculate</button>
     <p class="total">Total: </p>
 
+    <p class="demo">demo</p>
+-->
+    
+    <h1>Challenge exercises</h1>
+    <button>9a</button>
+    <button class="b9">9b</button>
+    <button class="heads" onclick="heads()">Heads</button>
+    <button class="tails" onclick="tails()">Tails</button>
+    <p class="userPick">Your choose: </p>
     
 
-<script src="lesson9.js"></script>
+    <input type="text" class="userName" onkeydown="enter()">
+    <button class="btn btn-primary submit" onclick="submit()" >Submit</button>
+    <script src="lesson9.js"></script>
+    <p class="yourName"></p>
 </body>
 </html>
