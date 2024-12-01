@@ -1,0 +1,21 @@
+
+.subscribe-btn{
+    background-color: red;
+    color: white;
+}
+.is-subscribed{
+    background-color: green;
+    color: white;
+}
+
+
+.is-subscribed:hover {
+    background-color: green;
+    color: gold;
+}
+
+.subscribe-btn:hover{
+    background-color: red;
+    color: gold;
+
+}

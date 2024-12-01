@@ -1,30 +1,41 @@
-/*
+
 function subscribe(){
-    let btnSubscribe = document.getElementsByClassName('btn')[0];
+    let btnSubscribe = document.getElementsByClassName('subscribe-btn')[0] || document.getElementsByClassName('is-subscribed')[0];
+
+    //btnSubscribe.innerHTML = btnSubscribe.innerText === 'Subscribe' ? 'Subscribed' : 'Subscribe'
     
-    btnSubscribe.innerHTML = btnSubscribe.innerText === 'Subscribe' ? 'Subscribed' : 'Subscribe'
+    if(btnSubscribe.innerText === 'Subscribe'){
+        btnSubscribe.innerText = 'Subscribed';
+        btnSubscribe.classList.add('is-subscribed');
+        btnSubscribe.classList.remove('subscribe-btn');
+    }
+    else{
+        btnSubscribe.innerText = 'Subscribe';
+        btnSubscribe.classList.add('subscribe-btn'); // Add the default class
+        btnSubscribe.classList.remove('is-subscribed');
+    }
 }
 
 function calculate(){
     let total = 0;
-    let userInput = document.getElementsByClassName('userInput')[0].value;
+    let userInput = document.getElementsByClassName('userInput')[0].value * 100;
 
     if (userInput == ''){
         alert('No inputted value');
         return;
     }
-    else if (userInput < 1){
+    else if (userInput < 100){
         alert('watdafuck')
         return;
     }
-    else if(userInput < 40){
-       total = +userInput + 10;
+    else if(userInput < 4000){
+       total = userInput + 1000;
     }
     else{
         total = userInput;
     }
 
-    document.getElementsByClassName('total')[0].innerHTML = `Total: $${total}`;
+    document.getElementsByClassName('total')[0].innerHTML = `Total: $${total / 100}`;
     
 }
 
@@ -35,13 +46,14 @@ function typing(event){
     }
     document.getElementsByClassName('demo')[0].innerText = userInput + event.key;
 }   
+
 function hover(){
     console.log('hovering');
 }
 function leave(){
     console.log('leaving');
 }
-*/
+
 
 // *CHALLENGE EXERCISES*
 //console.log(document.querySelector('button'));
@@ -62,9 +74,7 @@ function submit(){
 }
 
 function enter(){
-    if(event.key === 'Enter'){
-        submit();
-    }
+    event.key === 'Enter' ? submit() : null;
 }
 
 let text = 'Hello, world'; 
@@ -75,3 +85,13 @@ for (let i = 0; i < myArray.length; i++) {
     
 }
 console.log(myArray.length);
+
+
+let word = 'Hello';
+let wordArray = Array.from(word);
+console.log(wordArray);
+
+let arr = ['hello', 'world'];
+console.log(arr);
+let arrJoin = arr.reverse().join([' ']);
+console.log(arrJoin);
