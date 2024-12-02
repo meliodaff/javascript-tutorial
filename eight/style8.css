@@ -1,0 +1,15 @@
+body{
+    background-color: black;
+    color: white;
+}
+.move-icon {
+    height: 50px;
+}   
+.move-button{
+    background-color: transparent;
+    border: 2px white solid;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 25px;
+    margin-right: 10px;
+}

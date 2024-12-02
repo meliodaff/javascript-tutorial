@@ -4,13 +4,13 @@ let rs = document.getElementsByClassName('result')[0];
 let scr = document.getElementsByClassName('score')[0];
 
 function displayHTML(yourPick, computerChoice, result1){
-  yp.innerHTML = `Your pick is: ${yourPick}`;
-  cp.innerHTML = `Computer: ${computerChoice}`
+  yp.innerHTML = `Your pick is: <img src="https://supersimple.dev/projects/rock-paper-scissors/images/${yourPick}-emoji.png" class="move-icon">`;
+  cp.innerHTML = `Computer: <img src="https://supersimple.dev/projects/rock-paper-scissors/images/${computerChoice}-emoji.png" class="move-icon">`
   rs.innerHTML = `Result: ${result1}`;
 }
 
 function rock(){
-  let yourPick = 'Rock'
+  let yourPick = 'rock'
   display(yourPick);
   let computerChoice = computerPick(Math.random());
   let result1 = result(yourPick, computerChoice);
@@ -18,7 +18,7 @@ function rock(){
 }
 
 function paper(){
-  let yourPick = 'Paper'
+  let yourPick = 'paper'
   display(yourPick);
   let computerChoice = computerPick(Math.random());
   let result1 = result(yourPick, computerChoice);
@@ -26,7 +26,7 @@ function paper(){
 }
 
 function scissor(){
-  let yourPick = 'Scissor'
+  let yourPick = 'scissors'
   display(yourPick);
   let computerChoice = computerPick(Math.random());
   let result1 = result(yourPick, computerChoice);
@@ -36,16 +36,16 @@ function scissor(){
 function computerPick(randomNumber){
   let computerChoice = '';
   if(randomNumber <= .333){
-      console.log('Computer: Rock');
-      return computerChoice = 'Rock';
+      console.log('Computer: rock');
+      return computerChoice = 'rock';
   }
   else if (randomNumber <= .667){
-      console.log('Computer: Paper');
-      return computerChoice = 'Paper';
+      console.log('Computer: paper');
+      return computerChoice = 'paper';
   }
   else {
       console.log('Computer: scissor');
-      return computerChoice = 'Scissor';
+      return computerChoice = 'scissors';
   }
 }
 
@@ -59,9 +59,9 @@ function result(yourPick, computerPick){
       return 'Draw';
   }
   else if(
-      (yourPick === 'Rock' && computerPick === 'Scissor') ||
-      (yourPick === 'Paper' && computerPick === 'Rock') ||
-      (yourPick === 'Scissor' && computerPick === 'Paper')
+      (yourPick === 'rock' && computerPick === 'scissors') ||
+      (yourPick === 'paper' && computerPick === 'rock') ||
+      (yourPick === 'scissors' && computerPick === 'paper')
   ){
       scr.innerHTML = 'Score: ' + JSON.stringify(scoring('win'));
       return 'You win';
@@ -147,4 +147,17 @@ let person = {
   }
 }
 */
+(function(){
+  let object = {
+    name: 'da',
+    fullName: function(){
+      console.log(this.name + ' ' + this.name);
+    }
+  }
+  console.log('IIFE');
+  object.fullName();
+})();
+console.log('second');
+
+
 
