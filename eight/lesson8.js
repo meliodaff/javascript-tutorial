@@ -101,6 +101,9 @@ function resetScore(){
   score.wins = 0;
   score.losses = 0;
   score.draws = 0;
+  document.getElementsByClassName('yourPick')[0].innerHTML = 'Your pick is: ';
+  document.getElementsByClassName('computerPick')[0].innerHTML = 'Computer';
+  document.getElementsByClassName('result')[0].innerHTML = 'Result: ';
   scr.innerHTML = 'Score: back to zero';
 }
 
