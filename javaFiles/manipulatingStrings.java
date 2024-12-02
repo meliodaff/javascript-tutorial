@@ -20,7 +20,8 @@ public class manipulatingStrings{
         System.out.println(studentB);
         System.out.println(studentA == studentB);
 
-        studentA = "Bialen";
+        studentB = "Bialen";
+        System.out.println();
 
         System.out.println(studentA);
         System.out.println(studentB);
