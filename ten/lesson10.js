@@ -1,17 +1,12 @@
-let js_btn = document.querySelector('.test-button');
-let result = js_btn ? js_btn.classList.contains('test-button') : false;
-console.log(result);
+function subscribe(){
+    let btn = document.getElementsByClassName('js-subscribe-button')[0];
 
-function toggle(selector){
-    let btn = document.getElementsByClassName(selector)[0];
-
-    if (!btn.classList.contains('is-toggled')) {
-        btn.classList.add('is-toggled');
+    if(btn.innerText == 'Subscribe'){
+        btn.innerText = 'Subscribed';
+        btn.classList.add('subscribed-button');
     }
-    else {
-        btn.classList.remove('is-toggled');
+    else{
+        btn.innerText = 'Subscribe';
+        btn.classList.remove('subscribed-button')
     }
 }
-
-
-//study this more later
