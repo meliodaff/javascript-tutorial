@@ -1,3 +1,4 @@
+/*
 .subscribe-button{
     background-color: rgb(rgba(212, 163, 163, 0.351), green, blue);
     color: black;
@@ -11,4 +12,45 @@
 .subscribed-button{
     background-color:red;
     color: white;
+}
+    */
+
+.add-to-cart{
+    background-color: rgb(255, 216, 20);
+    padding: 10px 45px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.request-now, .schedule-for-later{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.schedule-for-later{
+    background-color: rgb(230, 230, 230);
+    color: black;
+}
+.is-toggle{
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.is-toggled{
+    background-color: rgb(229, 220, 220);
+    color: black;
 }
