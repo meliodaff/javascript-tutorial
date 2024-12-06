@@ -8,6 +8,7 @@ public class Employee {
     public Employee(String name, double basicSalary){
         setName(name);
         setBasicSalary(basicSalary);
+        System.out.println("contstructor built");
     }
     
     public void setName(String name){
