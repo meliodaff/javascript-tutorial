@@ -19,20 +19,28 @@ function subscribe(){
 function calculate(){
     let total = 0;
     let userInput = document.getElementsByClassName('userInput')[0].value * 100;
+    let displayError = document.getElementsByClassName('total')[0].innerHTML = 'Error: cost cannot be less than $0';
+    let removeError = document.getElementsByClassName('total')[0].classList.remove('error');
+
 
     if (userInput == ''){
-        alert('No inputted value');
+        document.getElementsByClassName('total')[0].classList.add('error');
+        displayError;
         return;
     }
-    else if (userInput < 100){
-        alert('watdafuck')
+    else if (userInput < 100){        
+        document.getElementsByClassName('total')[0].classList.add('error');
+        displayError;
         return;
     }
     else if(userInput < 4000){
-       total = userInput + 1000;
+        total = userInput + 1000;
+        removeError;
     }
     else{
-        total = userInput;
+         total = userInput;
+         removeError;
+
     }
 
     document.getElementsByClassName('total')[0].innerHTML = `Total: $${total / 100}`;

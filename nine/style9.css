@@ -17,5 +17,7 @@
 .subscribe-btn:hover{
     background-color: red;
     color: gold;
-
+}
+.error{
+    color: red;
 }
