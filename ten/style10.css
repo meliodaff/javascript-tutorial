@@ -41,8 +41,8 @@
     color: black;
 }
 .is-toggle{
-    background-color: black;
-    color: white;
+    background-color: rgb(229, 220, 220);
+    color: black;
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
@@ -51,6 +51,6 @@
 }
 
 .is-toggled{
-    background-color: rgb(229, 220, 220);
-    color: black;
+    background-color:black;
+    color: white;
 }

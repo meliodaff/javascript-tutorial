@@ -22,13 +22,40 @@ else{
 }
 */
 
-function toggle(){
-    const btnGaming = document.getElementsByClassName('is-toggle')[0];
+const btnGaming = document.getElementsByClassName('is-toggle')[0];
+const btnGaming1 = document.getElementsByClassName('is-toggle')[1];
+const btnGaming2 = document.getElementsByClassName('is-toggle')[2];
 
-    if(btnGaming.classList.contains('is-toggled')){
+function toggle(){
+    if(!btnGaming.classList.contains('is-toggled')){
+        btnGaming.classList.add('is-toggled');
+        btnGaming1.classList.remove('is-toggled');
+        btnGaming2.classList.remove('is-toggled');
+    }
+    else{
+        btnGaming.classList.remove('is-toggled');
+    }
+}
+
+function toggle1(){
+    if(!btnGaming1.classList.contains('is-toggled')){
+        btnGaming1.classList.add('is-toggled');
+        btnGaming.classList.remove('is-toggled');
+        btnGaming2.classList.remove('is-toggled');
+    }
+    else{
+        btnGaming1.classList.remove('is-toggled');
+    }
+}
+
+function toggle2(){
+    if(!btnGaming2.classList.contains('is-toggled')){
+        btnGaming2.classList.add('is-toggled');
+        btnGaming1.classList.remove('is-toggled');
         btnGaming.classList.remove('is-toggled');
     }
     else{
-        btnGaming.classList.add('is-toggled');
+        btnGaming2.classList.remove('is-toggled');
     }
 }
+// i think these functions from toggle - toggle2 to can be better.
