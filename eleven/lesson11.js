@@ -1,4 +1,4 @@
-let list = JSON.parse(localStorage.getItem('list')) || [];
+let list = /*JSON.parse(localStorage.getItem('list')) ||*/ [];
 
 function addToDo(){
     let inputElement = document.getElementsByClassName('js-name-input')[0];
@@ -69,7 +69,6 @@ while(index1 >= 0){
     console.log(index1);
     index1--;
 }
-*/
 
 let num = [-2, -1, 0, 99];
 let total = [];
@@ -87,5 +86,111 @@ function addOne(array){
     return myArray;
 }
 
+function addNum(array, num){
+    let myArray = [];
+    for (let index = 0; index < array.length; index++) {
+        myArray[index] = array[index] + num;
+    }
+    return myArray;
+}
+let numbers = [1, 2, 3];
+console.log(addNum(numbers, 3));
 
-console.log(addOne(num));
+
+function addArrays(array1, array2){
+    let temp = [];
+    for (let index = 0; index < array1.length; index++) {
+        temp[index] = array1[index] + array2[index];
+    }
+    return temp;
+}
+
+let array1 = [1, 2, 3];
+let array2 = [4, 5, 6];
+
+console.log(addArrays(array1, array2));
+
+function countPositive(nums){
+    let countPositive = 0;
+    for (let index = 0; index < nums.length; index++) {
+        if(nums[index] < 0){
+            countPositive++;;
+        }
+    }
+    return countPositive;
+}
+
+let array3 = [-2, 3, -5, 7, 10, -1, -4, 11, 42, 15, 32];
+
+let count = countPositive(array3);
+console.log(`Positive count: ${count}`);
+
+let array4 = [12, 90, 23, 45, 56, 67, 78, -1];
+
+function minMax(array){
+
+    if(array.length === 0){
+        return `Array is empty`;
+    }
+    let min = array[0];
+    let max = array[0];
+
+    for(let i = 1; i < array.length; i++){
+        if(min > array[i]){
+            min = array[i];
+        }
+        if(max < array[i]){
+            max = array[i];
+        }
+    }
+    let result = `Min: ${min}, Max: ${max}`;
+    return result; /*
+    ^^ thanks chat
+    ||
+}
+console.log(minMax(array4));
+
+
+this might not be the best 
+    ||
+    vv
+
+let min = '';
+    let max = '';
+    let i = 0, j = 1;
+
+    while (i < array.length && j < array.length - 1){
+        if(array[i] > array[j]){
+            max = array[i];
+            j++;
+        }
+        else{
+            max = array[j];
+            i++;
+        }
+    }
+
+    i = 0, j = 1;
+    while (i < array.length && j < array.length - 1){
+        if(array[i] < array[j]){
+            min = array[i];
+            j++;
+        }
+        else{
+            min = array[j];
+            i++;
+        }
+    }
+    let result = `Min: ${min}, Max: ${max}`;
+    return result;
+    
+    
+*/
+
+let int = 23.5;
+let bigInt = -23n;
+console.log(typeof int);
+console.log(`big int:  ${typeof bigInt}`);
+console.log(bigInt);
+
+//console.log(Number.isSafeInteger(-12345678987654321));
