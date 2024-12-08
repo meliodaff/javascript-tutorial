@@ -185,7 +185,6 @@ let min = '';
     return result;
     
     
-*/
 
 let int = 23.5;
 let bigInt = -23n;
@@ -194,3 +193,28 @@ console.log(`big int:  ${typeof bigInt}`);
 console.log(bigInt);
 
 //console.log(Number.isSafeInteger(-12345678987654321));
+
+*/
+
+// || 
+// vv i dont get this
+
+function countWords(words){
+    const result = {};
+
+    for(let i = 0; i < words.length; i++){
+        const word = words[i];
+
+        if(!result[word]){
+            result[word] = 1;
+        }
+        else{
+            result[word]++;
+        }
+    }
+    return result;
+}
+
+let array = ['apple', 'orange', 'apple', 'apple'];
+
+console.log(countWords(array));
