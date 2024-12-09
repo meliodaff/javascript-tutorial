@@ -1,0 +1,14 @@
+.delete-button, .add-button{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    margin-left: 100px;
+}
+
+.add-button{
+    background-color: green;
+    margin-left: 5px;
+    padding: 5px 20px;
+}

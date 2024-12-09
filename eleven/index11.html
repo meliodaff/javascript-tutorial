@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style11.css">
     <title>Document</title>
 </head>
 <body>
@@ -11,16 +12,18 @@
            placeholder="To do name"
            onkeydown="enter(event)"
     />
-
-    <button onclick="addToDo()">
+    <input class="date-button" type="date">
+    <button class="add-button" onclick="chooseDate()" onclick="addToDo()">
         Add
     </button>
 
     <div class="demo">
-
     </div>
+    <p class="date">
+    </p>
 
-    <script src="lesson11.js"></script>
+    <script src="lesson11.js"></script>  
+    <script src="objectsInArray.js"></script>
 </body>
 </html>
 

@@ -2,19 +2,39 @@ let list = /*JSON.parse(localStorage.getItem('list')) ||*/ [];
 
 function addToDo(){
     let inputElement = document.getElementsByClassName('js-name-input')[0];
+    if(inputElement.value === ''){
+        alert('no inputted value');
+    }
+    else{
     list.push(inputElement.value);
-    localStorage.setItem('list', JSON.stringify(list));
+    //localStorage.setItem('list', JSON.stringify(list));
+    chooseDate();
     renderToDoList();
     inputElement.value = ''; 
+    }
 }
 
-
+function chooseDate(){
+    let pickDate = document.getElementsByClassName('date-button')[0];
+    document.getElementsByClassName('date')[0].innerHTML = pickDate.value;
+}
 
 function renderToDoList(){
     let toDoListHTML = '';
     for (let index = 0; index < list.length; index++) {
         let temp = list[index];
-        toDoListHTML = `${toDoListHTML} <p>${temp}</p>`;
+        toDoListHTML = `${toDoListHTML} 
+        <p>
+            ${temp}
+            <button class="delete-button" onclick="
+            list.splice(${index}, 1);
+            renderToDoList();
+            ">
+            Delete
+            </button
+            </p>
+        
+        `;
 }
     document.getElementsByClassName('demo')[0].innerHTML = toDoListHTML;
 }
@@ -194,27 +214,27 @@ console.log(bigInt);
 
 //console.log(Number.isSafeInteger(-12345678987654321));
 
-*/
 
 // || 
 // vv i dont get this
 
-function countWords(words){
-    const result = {};
+function countWords(array){
+    let words = {};
 
-    for(let i = 0; i < words.length; i++){
-        const word = words[i];
+    for (let i = 0; i < array.length; i++){
+        let word = array[i].toLowerCase();
 
-        if(!result[word]){
-            result[word] = 1;
+        if(words[word]){
+            words[word]++;
         }
         else{
-            result[word]++;
+            words[word] = 1;
         }
     }
-    return result;
+    return words;
 }
 
-let array = ['apple', 'orange', 'apple', 'apple'];
+let array = ['apple', 'orange', 'apple', 'apple', 'Apple', 'Orange', 'Banana', 'banana'];
 
 console.log(countWords(array));
+*/
