@@ -1,3 +1,4 @@
+/*
 let productsArray = [{
     name: 'Milk',
     price: 20
@@ -44,3 +45,7 @@ function displayProducts(){
         console.log(productsArray[i]);    
     }
 }
+*/
+
+const [firstValue, secondValue] = [1, 2, 3];
+console.log(firstValue[2]);

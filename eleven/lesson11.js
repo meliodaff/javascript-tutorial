@@ -8,34 +8,32 @@ function addToDo(){
     else{
     list.push(inputElement.value);
     //localStorage.setItem('list', JSON.stringify(list));
-    chooseDate();
     renderToDoList();
     inputElement.value = ''; 
     }
 }
 
-function chooseDate(){
-    let pickDate = document.getElementsByClassName('date-button')[0];
-    document.getElementsByClassName('date')[0].innerHTML = pickDate.value;
-}
 
 function renderToDoList(){
     let toDoListHTML = '';
+    let pickDate = document.getElementsByClassName('date-button')[0];
     for (let index = 0; index < list.length; index++) {
         let temp = list[index];
-        toDoListHTML = `${toDoListHTML} 
-        <p>
-            ${temp}
+        let dueDate = document.getElementsByClassName('date-button')[0].innerHTML = pickDate.value;
+        toDoListHTML = 
+        
+        `${toDoListHTML} 
+            <div>${temp}</div>
+            <div>${dueDate}</div>
             <button class="delete-button" onclick="
             list.splice(${index}, 1);
             renderToDoList();
             ">
             Delete
             </button
-            </p>
         
         `;
-}
+}   console.log(toDoListHTML);
     document.getElementsByClassName('demo')[0].innerHTML = toDoListHTML;
 }
 

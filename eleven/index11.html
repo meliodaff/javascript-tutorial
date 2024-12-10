@@ -8,19 +8,18 @@
 </head>
 <body>
     <p>To do list</p>
-    <input class="js-name-input" 
-           placeholder="To do name"
-           onkeydown="enter(event)"
-    />
-    <input class="date-button" type="date">
-    <button class="add-button" onclick="chooseDate()" onclick="addToDo()">
-        Add
-    </button>
-
+    <div class="todo-input-grid">
+        <input class="js-name-input" 
+            placeholder="To do name"
+            onkeydown="enter(event)"
+        />
+        <input class="date-button" type="date">
+        <button class="add-button" onclick="addToDo()">
+            Add
+        </button>
+    </div>  
     <div class="demo">
     </div>
-    <p class="date">
-    </p>
 
     <script src="lesson11.js"></script>  
     <script src="objectsInArray.js"></script>

@@ -12,3 +12,8 @@
     margin-left: 5px;
     padding: 5px 20px;
 }
+
+.demo, .todo-input-grid{
+    display: grid;
+    grid-template-columns: 125px 100px 150px;
+}
