@@ -1,4 +1,4 @@
-
+/*
 const arrayOfStrings = ['hello', 'world', 'search', 'good', 'search'];
 function findIndex(array, word){
     for (let i = 0; i < array.length; i++) {
@@ -62,9 +62,33 @@ function unique(array){
     }
     return uniqueArray;
 }
+function submit(){
+    const inputElement = document.getElementsByClassName('input')[0];
+    const outputElement = document.getElementsByClassName('demo')[0];
 
-console.log(unique(colors));
+    outputElement.innerText = inputElement.value;
+}
+*/
 
 
+function changeToRed(){
+    const body = document.querySelector('body');
+    body.classList.add('red');
+    body.classList.remove('blue')
+    body.classList.remove('green')
+}
+function changeToBlue(){
+    const body = document.querySelector('body');
+    body.classList.add('blue');
+    body.classList.remove('red')
+    body.classList.remove('green')
 
+}
+function changeToGreen(){
+    const body = document.querySelector('body');
+    body.classList.add('green');
+    body.classList.remove('blue')
+    body.classList.remove('red')
+
+}
 

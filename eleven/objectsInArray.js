@@ -1,4 +1,4 @@
-/*
+
 let productsArray = [{
     name: 'Milk',
     price: 20
@@ -8,7 +8,7 @@ let productsArray = [{
 }
 ];
 
-
+/*
 for (let i = 0; i < productsArray.length; i++) {
     productsArray[i].supplier = 'Nestle';
 }
@@ -21,7 +21,6 @@ addPrice(100, 1);
 
 productsArray[2].supplier = 'Nestle';
 
-displayProducts();
 
 
 function addProduct(productName, productPrice){
@@ -39,13 +38,26 @@ function addProduct(name){
 function addPrice(price, index){
     productsArray[index].price = price;
 }
+*/
    
-function displayProducts(){
+let displayProducts = () => {
     for (let i = 0; i < productsArray.length; i++) {
         console.log(productsArray[i]);    
     }
 }
-*/
 
-const [firstValue, secondValue] = [1, 2, 3];
-console.log(firstValue[2]);
+let greetings = (name) => {
+    console.log(`Hello, ${name}`);
+}
+
+let object = {
+    name: 'Jay',
+    displayName: () => {
+        console.log(`Hello, ${object.name}`);
+    }
+}
+
+
+setTimeout(function (){
+    console.log('dsads');
+},   3000);
