@@ -1,5 +1,6 @@
-let list = /*JSON.parse(localStorage.getItem('list')) ||*/ [];
+let list = JSON.parse(localStorage.getItem('list')) || [];
 
+renderToDoList();
 function addToDo(){
     let inputElement = document.getElementsByClassName('js-name-input')[0];
     if(inputElement.value === ''){
@@ -7,7 +8,7 @@ function addToDo(){
     }
     else{
     list.push(inputElement.value);
-    //localStorage.setItem('list', JSON.stringify(list));
+    localStorage.setItem('list', JSON.stringify(list));
     renderToDoList();
     inputElement.value = ''; 
     }
@@ -30,10 +31,9 @@ function renderToDoList(){
             renderToDoList();
             ">
             Delete
-            </button
-        
-        `;
-}   console.log(toDoListHTML);
+            </button>`;
+}
+    console.log(toDoListHTML);
     document.getElementsByClassName('demo')[0].innerHTML = toDoListHTML;
 }
 
