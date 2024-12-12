@@ -91,4 +91,12 @@ function changeToGreen(){
     body.classList.remove('red')
 
 }
+let object = {
+    name: 'Jay',
+    age: 20
+}
+let object1 = ["Banana", "Apple", "Orange", "Kiwi"];
+object1.shift();
+console.log(object1);
+
 
