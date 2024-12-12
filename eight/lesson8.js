@@ -3,6 +3,29 @@ let cp = document.getElementsByClassName('computerPick')[0];
 let rs = document.getElementsByClassName('result')[0];
 let scr = document.getElementsByClassName('score')[0];
 
+function autoPlayMethod(){
+  let yourPick = computerPick(Math.random())
+  let computerChoice = computerPick(Math.random());
+  let result1 = result(yourPick, computerChoice);
+  displayHTML(yourPick, computerChoice, result1);
+}
+
+let intervalID = null;
+
+function autoPlay(){
+  let autoPlayButton = document.getElementsByClassName('auto-play-button')[0];
+  if(intervalID === null){
+    intervalID = setInterval(autoPlayMethod, 1000)
+    autoPlayButton.innerText = 'Stop Auto Play'
+  }
+  else{
+    clearInterval(intervalID);
+    intervalID = null;
+    autoPlayButton.innerText = 'Auto Play'
+  }
+}
+
+
 function displayHTML(yourPick, computerChoice, result1){
   yp.innerHTML = `Your pick is: <img src="https://supersimple.dev/projects/rock-paper-scissors/images/${yourPick}-emoji.png" class="move-icon">`;
   cp.innerHTML = `Computer: <img src="https://supersimple.dev/projects/rock-paper-scissors/images/${computerChoice}-emoji.png" class="move-icon">`
