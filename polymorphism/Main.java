@@ -2,9 +2,8 @@ package polymorphism;
 
 public class Main{
     public static void main(String[] args) {
-        Animal dog = new Dog();
-
-        System.out.println(dog.greet("Boots"));
-        dog.greet();
+        Animal cat = new Cat();
+        String y = cat.greet("Jay");
+         
     }
 }
