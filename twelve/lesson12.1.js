@@ -69,3 +69,15 @@ function displayMessages(){
     }, 1000)
 }
 
+const oneLine = (param, param1) => 'dsadsa';
+console.log(oneLine('p', 'p'));
+
+
+let object = {
+    method: () => {
+        console.log('method');
+    },
+    name: 'Jay',
+    age: 20
+}
+object.method()
