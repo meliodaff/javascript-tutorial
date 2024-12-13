@@ -33,22 +33,39 @@ function addToCart(){
         demo.innerHTML = '';
     }, 2000)
 }
-let message = 0;
+let message = 2;
 
-setInterval(function(){
-    if(document.title === 'App'){
-        document.title = `(${message}) New Messages`
-    }
-    else{
-        document.title = 'App'
-    }
-}, 1000)
+
+
+let intervalID = 0;
+
+displayMessages();
 
 function addMessage(){
-    message++;
+    if(message >= 0){
+        displayMessages();
+        message++;
+    }
 }
 
 function removeMessage(){
-    message--;
+    if(message > 0){
+        message--;
+        if(message === 0){
+            clearInterval(intervalID);
+            document.title = 'App'
+        }
+    }
+}
+
+function displayMessages(){
+    intervalID = setInterval(() => {
+        if(document.title === 'App'){
+            document.title = `(${message}) New Messages`
+        }
+        else{
+            document.title = 'App'
+        }
+    }, 1000)
 }
 
