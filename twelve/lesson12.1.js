@@ -37,20 +37,18 @@ let message = 0;
 
 setInterval(function(){
     if(document.title === 'App'){
-        document.title = '(${message} New Messages)'
+        document.title = `(${message}) New Messages`
     }
     else{
         document.title = 'App'
     }
 }, 1000)
 
-
-function add(){
+function addMessage(){
     message++;
 }
 
-function remove(){
+function removeMessage(){
     message--;
 }
-
 
