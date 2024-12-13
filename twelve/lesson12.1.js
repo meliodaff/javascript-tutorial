@@ -33,14 +33,24 @@ function addToCart(){
         demo.innerHTML = '';
     }, 2000)
 }
+let message = 0;
 
 setInterval(function(){
     if(document.title === 'App'){
-        document.title = '(2) New Messages'
+        document.title = '(${message} New Messages)'
     }
     else{
         document.title = 'App'
     }
 }, 1000)
+
+
+function add(){
+    message++;
+}
+
+function remove(){
+    message--;
+}
 
 
