@@ -130,6 +130,17 @@ function resetScore(){
   scr.innerHTML = 'Score: back to zero';
 }
 
+document.body.addEventListener('keydown', (event) => { // when using keypress, it doesnt read backspace
+  console.log(event.key);
+  if(event.key === 'a'){
+    autoPlay();
+  }
+  if(event.key === 'r' || event.key === 'Backspace'){
+    resetScore();
+  }
+});
+
+
 /*
 const product = {
   name: 'Basketball',
