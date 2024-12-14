@@ -15,13 +15,19 @@ const runTwice = (fun) => {
 runTwice('12b');
 
 //12.C
-function start(){
+
+let startElement = document.querySelector('.start').addEventListener('click', () => {
     const button = document.getElementsByClassName('test-button')[0]
     button.innerText = 'Loading...'
     setTimeout(function () {
         button.innerText = 'Finished!'
     }, 1000)
-}
+} )
+
+
+
+
+
 
 //12.E
 let timeoutID;
@@ -80,4 +86,6 @@ let object = {
     name: 'Jay',
     age: 20
 }
-object.method()
+
+
+
