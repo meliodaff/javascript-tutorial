@@ -16,14 +16,33 @@ runTwice('12b');
 
 //12.C
 
-let startElement = document.querySelector('.start').addEventListener('click', () => {
+document.querySelector('.start').addEventListener('click', () => {
     const button = document.getElementsByClassName('test-button')[0]
     button.innerText = 'Loading...'
+    button.disabled = true;
     setTimeout(function () {
         button.innerText = 'Finished!'
+        button.disabled = false;
     }, 1000)
 } )
+let message = 2;
 
+document.querySelector('.add-message').addEventListener('click', () => {
+    if(message >= 0){
+        displayMessages();
+        message++;
+    }
+})
+
+document.querySelector('.remove-message').addEventListener('click', () => {
+    if(message > 0){
+        message--;
+        if(message === 0){
+            clearInterval(intervalID);
+            document.title = 'App'
+        }
+    }
+})
 
 
 
@@ -39,7 +58,6 @@ function addToCart(){
         demo.innerHTML = '';
     }, 2000)
 }
-let message = 2;
 
 
 
@@ -47,22 +65,7 @@ let intervalID = 0;
 
 displayMessages();
 
-function addMessage(){
-    if(message >= 0){
-        displayMessages();
-        message++;
-    }
-}
 
-function removeMessage(){
-    if(message > 0){
-        message--;
-        if(message === 0){
-            clearInterval(intervalID);
-            document.title = 'App'
-        }
-    }
-}
 
 function displayMessages(){
     intervalID = setInterval(() => {
