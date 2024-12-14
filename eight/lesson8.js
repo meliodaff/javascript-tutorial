@@ -129,16 +129,31 @@ function resetScore(){
   document.getElementsByClassName('result')[0].innerHTML = 'Result: ';
   scr.innerHTML = 'Score: back to zero';
 }
-
+const yesButton = document.querySelector('.yes');
+const noButton = document.querySelector('.no')
+yesButton.style.display = 'none';
+noButton.style.display = 'none';
 document.body.addEventListener('keydown', (event) => { // when using keypress, it doesnt read backspace
-  console.log(event.key);
   if(event.key === 'a'){
     autoPlay();
   }
   if(event.key === 'r' || event.key === 'Backspace'){
-    resetScore();
+    yesButton.style.display = 'block';
+    noButton.style.display = 'block';
+    yesButton.addEventListener('click', () => {
+      resetScore();
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+    })
+    noButton.addEventListener('click', () => {
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+    })
   }
 });
+
+
+
 
 
 /*
