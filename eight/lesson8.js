@@ -129,6 +129,24 @@ function resetScore(){
   document.getElementsByClassName('result')[0].innerHTML = 'Result: ';
   scr.innerHTML = 'Score: back to zero';
 }
+
+document.getElementsByClassName('reset-score')[0].addEventListener('click', () => {
+    yesButton.style.display = 'block';
+    noButton.style.display = 'block';
+    yesButton.addEventListener('click', () => {
+      resetScore();
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+    })
+    noButton.addEventListener('click', () => {
+      yesButton.style.display = 'none';
+      noButton.style.display = 'none';
+    })
+})
+
+
+
+
 const yesButton = document.querySelector('.yes');
 const noButton = document.querySelector('.no')
 yesButton.style.display = 'none';
