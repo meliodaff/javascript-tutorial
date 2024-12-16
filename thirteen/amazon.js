@@ -114,3 +114,9 @@ console.table(array[0]);
 console.table(array[1]);
 // if you want to store datas in a specific and detailed way, use objects
 // otherwise arrays (but depends on the use)
+
+document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
+  button.addEventListener('click', () => {
+    console.log(button);
+  })
+})
