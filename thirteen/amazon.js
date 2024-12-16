@@ -97,3 +97,20 @@ products.forEach((value, index) => {
 
 document.querySelector('.demo').innerHTML = productsHTML;
 
+let array = [
+  {
+    name: 'jay',
+    hobbies: ['coding', 'playing', 'jogging']
+  }, {
+    name: 'nea',
+    hobbies: {
+      computerGames: 'tong its',
+      outdoorGames: 'badminton'
+    }
+  }
+]
+
+console.table(array[0]);
+console.table(array[1]);
+// if you want to store datas in a specific and detailed way, use objects
+// otherwise arrays (but depends on the use)
