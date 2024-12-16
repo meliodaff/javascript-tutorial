@@ -1,6 +1,7 @@
 // objects inside an array
-const products = [ 
-    {productImage: 'Socks.jpg',
+const products = [
+  {
+     productImage: 'Socks.jpg',
      productName: 'Black and gray socks',
      rating: {
         stars: 4.5,
@@ -25,8 +26,17 @@ const products = [
         count: 56
      },
      priceCents: 799
+    },
+    {
+      productImage: 'Soccer.jpg',
+      productName: 'Soccer ball',
+      rating: {
+        starts: 4,
+        count: 30
+      },
+      priceCents: 1999
     }
-]
+  ]
 
 let productsHTML = '';
 products.forEach((value, index) => {
@@ -48,7 +58,7 @@ products.forEach((value, index) => {
           </div>
 
           <div class="product-price">
-            $${value.priceCents / 100}
+            $${(value.priceCents / 100).toFixed(2)}
           </div>
 
           <div class="product-quantity-container">
