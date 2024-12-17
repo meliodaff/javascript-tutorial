@@ -1,3 +1,4 @@
+/*
 // objects inside an array
 const products = [
   {
@@ -117,6 +118,50 @@ console.table(array[1]);
 
 document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
   button.addEventListener('click', () => {
-    console.log(button);
+    console.log(button);  
   })
 })
+
+*/
+
+const products = [{
+  image: 'wireless-headphones.jpg',
+  name: 'Wireless headphones',
+  rating: {
+    star: 4.5,
+    count: 40
+  },
+  priceCents: 59999
+}, {
+  image: 'mechanical-kb.jpg',
+  name: 'Mechanical keyboard',
+  rating: {
+    star: 4,
+    count: 231
+  },
+  priceCents: 199999
+}, {
+  image: 'wide-monitor.png',
+  name: 'Wide monitor',
+  rating: {
+    star: 5,
+    count: 141
+  },
+  priceCents: 499999
+}]
+
+let productsHTML = '';
+let i = 1;
+products.forEach((product) => {
+  productsHTML = productsHTML + `
+  ${i++}.
+  <div>${product.image}</div>
+  <div>${product.name} </div>
+  <div>Star: ${product.rating.star} </div>
+  <div>Count: ${product.rating.count} </div>
+  <div>$${(product.priceCents / 100).toFixed(2)} </div>
+  <button class="add-to-cart-btn">Add to cart</button>
+  <hr>
+  `
+})
+document.querySelector('.products-grid').innerHTML = productsHTML;
