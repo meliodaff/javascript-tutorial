@@ -191,14 +191,15 @@ products.forEach((product, index) => {
           matchingItem = item;
         }
       })
-      let quantitySelect = document.querySelector('.quantity-select');
+      const quantitySelector = button.previousElementSibling; // Assuming the select element is right before the button
+    const quantity = parseInt(quantitySelector.value, 10);
       if(matchingItem){
-        matchingItem.quantity = matchingItem.quantity + +quantitySelect.value;
+        matchingItem.quantity = matchingItem.quantity + quantity;
       }
       else{
         cart.push({
           productName: productName,
-          quantity: +quantitySelect.value
+          quantity: quantity
         })
       }
       let totalQuantity = 0;
