@@ -32,7 +32,7 @@ const products = [
       productImage: 'Soccer.jpg',
       productName: 'Soccer ball',
       rating: {
-        starts: 4,
+        stars: 4,
         count: 30
       },
       priceCents: 1999
@@ -171,6 +171,7 @@ products.forEach((product, index) => {
 
   document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
     button.addEventListener('click', () => {
+
       const productName = button.dataset.productName;
       
       let matchingItem;
@@ -189,7 +190,13 @@ products.forEach((product, index) => {
           quantity: 1
         })
       }
-      console.log(cart);
+      let totalQuantity = 0;
+
+      cart.forEach((item) => {
+      totalQuantity += item.quantity;
+})
+document.querySelector('.cart-quantity').innerHTML = `Cart Quantity: ${totalQuantity}`;
+
     })
   })
 })
