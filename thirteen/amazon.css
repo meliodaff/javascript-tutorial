@@ -13,8 +13,19 @@
     margin-bottom: 5px;
 }
 .add-to-cart-btn:hover{
-    box-shadow: 5px 10px red;
+    box-shadow: 5px 10px green;
     text-shadow: 1px 1px blue;
     transition: 0.5s;
     color: rgb(9, 246, 9);
+}
+.container{
+    border: solid red;
+    margin-right: 1000px;
+    opacity: 0.2;
+    padding: 10px;
+    transition: opacity .3s ease;
+}
+
+.container:hover{
+    opacity: 1;
 }

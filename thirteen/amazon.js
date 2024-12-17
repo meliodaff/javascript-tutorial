@@ -150,18 +150,50 @@ const products = [{
   priceCents: 499999
 }]
 
+const cart = [];
+
 let productsHTML = '';
-let i = 1;
-products.forEach((product) => {
+products.forEach((product, index) => {
   productsHTML = productsHTML + `
-  ${i++}.
-  <div>${product.image}</div>
-  <div>${product.name} </div>
-  <div>Star: ${product.rating.star} </div>
-  <div>Count: ${product.rating.count} </div>
-  <div>$${(product.priceCents / 100).toFixed(2)} </div>
-  <button class="add-to-cart-btn">Add to cart</button>
-  <hr>
+  <div class="container"> 
+  ${index + 1}.
+    <div>${product.image} </div>
+    <div>${product.name} </div>
+    <div>Star: ${product.rating.star} </div>
+    <div>Count: ${product.rating.count} </div>
+    <div>$${(product.priceCents / 100).toFixed(2)} </div>
+    <button data-product-name="${product.name}" class="add-to-cart-btn">Add to cart</button>
+  </div>
+  <br>
   `
+  document.querySelector('.products-grid').innerHTML = `${productsHTML}`;
+
+
+  document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+      const productName = button.dataset.productName;
+      
+      let matchingItem;
+      cart.forEach((item) => {
+        if(item.productName === productName){
+          matchingItem = item;
+        }
+      })
+
+      if(matchingItem){
+        matchingItem.quantity = matchingItem.quantity + 1
+      }
+      else{
+        cart.push({
+          productName: productName,
+          quantity: 1
+        })
+      }
+      console.log(cart);
+    })
+  })
 })
-document.querySelector('.products-grid').innerHTML = productsHTML;
+
+
+
+
