@@ -162,6 +162,17 @@ products.forEach((product, index) => {
     <div>Star: ${product.rating.star} </div>
     <div>Count: ${product.rating.count} </div>
     <div>$${(product.priceCents / 100).toFixed(2)} </div>
+    <select class="quantity-select">
+      <option selected>1</option> 
+      <option value="2">2</option> 
+      <option value="3">3</option> 
+      <option value="4">4</option> 
+      <option value="5">5</option> 
+      <option value="6">6</option> 
+      <option value="7">7</option> 
+      <option value="8">8</option> 
+      <option value="9">9</option> 
+    </select>
     <button data-product-name="${product.name}" class="add-to-cart-btn">Add to cart</button>
   </div>
   <br>
@@ -180,14 +191,14 @@ products.forEach((product, index) => {
           matchingItem = item;
         }
       })
-
+      let quantitySelect = document.querySelector('.quantity-select');
       if(matchingItem){
-        matchingItem.quantity = matchingItem.quantity + 1
+        matchingItem.quantity = matchingItem.quantity + +quantitySelect.value;
       }
       else{
         cart.push({
           productName: productName,
-          quantity: 1
+          quantity: +quantitySelect.value
         })
       }
       let totalQuantity = 0;
@@ -195,7 +206,7 @@ products.forEach((product, index) => {
       cart.forEach((item) => {
       totalQuantity += item.quantity;
 })
-document.querySelector('.cart-quantity').innerHTML = `Cart Quantity: ${totalQuantity}`;
+  document.querySelector('.cart-quantity').innerHTML = `Cart Quantity: ${totalQuantity}`;
 
     })
   })
