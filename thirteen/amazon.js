@@ -63,7 +63,8 @@ products.forEach((value, index) => {
           </div>
 
           <div class="product-quantity-container">
-            <select class="js-quantity-selector" data-testid="quantity-selector">
+            <select class="js-quantity-selector"
+            >
               <option selected="" value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -125,6 +126,7 @@ document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
 */
 
 const products = [{
+  id: '1',
   image: 'wireless-headphones.jpg',
   name: 'Wireless headphones',
   rating: {
@@ -133,6 +135,7 @@ const products = [{
   },
   priceCents: 59999
 }, {
+  id: '2',
   image: 'mechanical-kb.jpg',
   name: 'Mechanical keyboard',
   rating: {
@@ -141,6 +144,7 @@ const products = [{
   },
   priceCents: 199999
 }, {
+  id: '3',
   image: 'wide-monitor.png',
   name: 'Wide monitor',
   rating: {
@@ -162,7 +166,7 @@ products.forEach((product, index) => {
     <div>Star: ${product.rating.star} </div>
     <div>Count: ${product.rating.count} </div>
     <div>$${(product.priceCents / 100).toFixed(2)} </div>
-    <select class="quantity-select">
+    <select class="js-quantity-select-${product.id}">
       <option selected>1</option> 
       <option value="2">2</option> 
       <option value="3">3</option> 
@@ -173,16 +177,19 @@ products.forEach((product, index) => {
       <option value="8">8</option> 
       <option value="9">9</option> 
     </select>
-    <button data-product-name="${product.name}" class="add-to-cart-btn">Add to cart</button>
+    <button data-product-id="${product.id}" data-product-name="${product.name}" class="add-to-cart-btn">Add to cart</button>
   </div>
   <br>
   `
-  document.querySelector('.products-grid').innerHTML = `${productsHTML}`;
+})
+
+document.querySelector('.products-grid').innerHTML = `${productsHTML}`;
 
 
   document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
     button.addEventListener('click', () => {
 
+      const productId = button.dataset.productId;
       const productName = button.dataset.productName;
       
       let matchingItem;
@@ -191,8 +198,9 @@ products.forEach((product, index) => {
           matchingItem = item;
         }
       })
-      const quantitySelector = button.previousElementSibling; // Assuming the select element is right before the button
-    const quantity = parseInt(quantitySelector.value, 10);
+      const quantitySelector = document.querySelector(`.js-quantity-select-${productId}`);
+      const quantity = +(quantitySelector.value);
+
       if(matchingItem){
         matchingItem.quantity = matchingItem.quantity + quantity;
       }
@@ -211,7 +219,6 @@ products.forEach((product, index) => {
 
     })
   })
-})
 
 
 
