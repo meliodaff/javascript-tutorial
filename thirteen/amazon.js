@@ -127,7 +127,7 @@ document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
 
 const products = [{
   id: '1',
-  image: 'wireless-headphones.jpg',
+  image: 'https://www.jbl.com.ph/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw4cd4cad7/JBL_TOUR_ONE_BLK_Hero.jpg?sw=270&sh=330&sm=fit&sfrm=png',
   name: 'Wireless headphones',
   rating: {
     star: 4.5,
@@ -136,7 +136,7 @@ const products = [{
   priceCents: 59999
 }, {
   id: '2',
-  image: 'mechanical-kb.jpg',
+  image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0snusVOiUuH_93wV5xXCsGV2t9MGOVoAFog&s',
   name: 'Mechanical keyboard',
   rating: {
     star: 4,
@@ -145,7 +145,7 @@ const products = [{
   priceCents: 199999
 }, {
   id: '3',
-  image: 'wide-monitor.png',
+  image: 'https://www.shutterstock.com/image-illustration/computer-monitor-side-isolated-on-260nw-2338153129.jpg',
   name: 'Wide monitor',
   rating: {
     star: 5,
@@ -161,11 +161,12 @@ products.forEach((product, index) => {
   productsHTML = productsHTML + `
   <div class="container"> 
   ${index + 1}.
-    <div>${product.image} </div>
+    <img src="${product.image}"> 
     <div>${product.name} </div>
     <div>Star: ${product.rating.star} </div>
     <div>Count: ${product.rating.count} </div>
     <div>$${(product.priceCents / 100).toFixed(2)} </div>
+    <p class="added js-added-to-cart-${product.id}">Added</p>
     <select class="js-quantity-select-${product.id}">
       <option selected>1</option> 
       <option value="2">2</option> 
@@ -185,12 +186,19 @@ products.forEach((product, index) => {
 
 document.querySelector('.products-grid').innerHTML = `${productsHTML}`;
 
+const visible = () => document.querySelector('.added').classList.add('added-visible')
 
   document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
     button.addEventListener('click', () => {
 
       const productId = button.dataset.productId;
       const productName = button.dataset.productName;
+      const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`) // all i know is that it stores a value with unique id in the variable
+      addedMessage.classList.add('added-visible');
+      
+      setTimeout(() => {
+        addedMessage.classList.remove('added-visible')
+      }, 1000)
       
       let matchingItem;
       cart.forEach((item) => {

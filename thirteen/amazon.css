@@ -21,11 +21,20 @@
 .container{
     border: solid red;
     margin-right: 1000px;
-    opacity: 0.2;
+    opacity: 0.5;
     padding: 10px;
     transition: opacity .3s ease;
 }
 
 .container:hover{
+    opacity: 1;
+}
+
+.added{
+    color: green;
+    opacity: 0;
+}
+
+.added-visible{
     opacity: 1;
 }
