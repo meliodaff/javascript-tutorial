@@ -1,15 +1,9 @@
-function fetchData() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("📦 Data received!"); // Simulates a delay
-        }, 2000);
-    });
+async function fetchData() {
+    console.log('Start fetching...');
+    await new Promise(resolve => setTimeout(resolve, 3000)); // Simulating 3s delay
+    console.log('Data received!');
 }
 
-console.log("Fetching data...");
-
-fetchData()
-    .then(data => console.log(data)) // Runs after 2s
-    .catch(error => console.log("Error:", error));
-
-console.log("Waiting...");
+console.log('Before calling fetchData()');
+fetchData();
+console.log('After calling fetchData()');
